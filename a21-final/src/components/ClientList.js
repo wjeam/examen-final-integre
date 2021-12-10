@@ -9,23 +9,28 @@ const ClientList = () => {
     const [clients, setClients] = useState([]);
 
     return (
-        <>
+        <div style={{border: "2px solid black"}}>
             <div style={{textAlign: "center"}}>
                 <FetchClientsButton setClients={setClients}/>
                 <FetchMaleButton setClients={setClients}/>
                 <FetchOntariensButton setClients={setClients}/>
             </div>
-            <table>
-                {clients.map((client) => {
+            <table style={{textAlign: "center", margin: "50px auto 0 auto"}}>
+                <tbody>
+                {clients.map((client, key) => {
                     return (
-                        <tr>
-                            <td>{client.id}</td>
-                            <td>$100</td>
+                        <tr key={key}>
+                            <td style={{width:"100px"}}>{client.id}</td>
+                            <td style={{width:"100px"}}>{client.firstName}</td>
+                            <td style={{width:"100px"}}>{client.lastName}</td>
+                            <td style={{width:"100px"}}>{client.gender}</td>
+                            <td style={{width:"100px"}}>{client.birthDate}</td>
                         </tr>
                     )
                 })}
+                </tbody>
             </table>
-        </>
+        </div>
     )
 }
 

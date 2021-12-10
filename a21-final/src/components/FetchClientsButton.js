@@ -15,7 +15,7 @@ const FetchClientsButton = ({setClients}) => {
             return response.json();
         })
         .then((data) => {
-            console.log(data);
+            setClients(data);
         })
     }
 
